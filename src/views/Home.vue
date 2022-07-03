@@ -1,14 +1,12 @@
 <template>
-  <MovieCreate />
-  <MoviesList />
+  <MoviesSlider />
 </template>
 
 <script>
-import MovieCreate from '@/components/MovieCreate.vue'
-import MoviesList from '@/components/MoviesList.vue'
+import MoviesSlider from '@/components/MoviesSlider.vue'
 
 export default {
   name: 'Home',
-  components: { MovieCreate, MoviesList }
+  components: { MoviesSlider }
 }
 </script>

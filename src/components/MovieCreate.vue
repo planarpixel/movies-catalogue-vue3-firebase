@@ -6,6 +6,11 @@
         <input v-model="form.title" class="form-control" required />
       </div>
 
+      <div class="form-group">
+        <label>Original title</label>
+        <input v-model="form.originalTitle" class="form-control" required />
+      </div>
+
       <div class="form-group mt-3">
         <label>Year</label>
         <input
@@ -49,14 +54,15 @@ import { reactive } from 'vue'
 
 export default {
   setup() {
-    const form = reactive({ title: '', year: '', category: '', cover: '' })
+    const form = reactive({ title: '', originalTitle: '', year: '', category: '', cover: '' })
 
     const onSubmit = async () => {
-      await createMovie({ ...form })
-      form.title = ''
-      form.year = ''
-      form.category = ''
-      form.cover = ''
+      await createMovie({ ...form });
+      form.title = '';
+      form.originalTitle = '';
+      form.year = '';
+      form.category = '';
+      form.cover = '';
     }
 
     return { form, onSubmit }

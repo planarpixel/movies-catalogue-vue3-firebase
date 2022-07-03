@@ -4,6 +4,7 @@
       <thead>
         <tr>
           <th scope="col">Title</th>
+          <th scope="col">Original title</th>
           <th scope="col">Year</th>
           <th scope="col">Category</th>
           <th scope="col">Cover</th>
@@ -11,11 +12,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{ id, title, year, category, cover } in movies" :key="id">
+        <tr v-for="{ id, title, originalTitle, year, category, cover } in movies" :key="id">
           <td>{{ title }}</td>
+          <td>{{ originalTitle }}</td>
           <td>{{ year }}</td>
           <td>{{ category }}</td>
-          <td>{{ cover }}</td>
+          <td><img :src="cover" style="width: 60px" /></td>
           <td>
             <router-link :to="`/edit/${id}`">
               <button class="btn btn-primary btn-sm me-2">
@@ -42,3 +44,4 @@ export default {
   }
 }
 </script>
+
